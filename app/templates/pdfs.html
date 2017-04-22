@@ -1,0 +1,23 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Reports</title>
+        {% endif %}
+    </head>
+    <body>
+        <table class="table table-hover">
+        {% for i in ldir: %}
+        <tr>
+            <td width="100%"><a href="{{ url_for('.static', filename = 'reports_pdf/%s' % i )}}">{{ i }}</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
+{% endblock %}

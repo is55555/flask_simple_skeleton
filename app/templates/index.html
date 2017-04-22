@@ -1,0 +1,25 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Reports</title>
+        {% endif %}
+    </head>
+    <body>
+        <table class="table table-hover">
+        {% for i in records: %}
+        <tr>
+            <td width="70px">{{ format_long_string(i[0]) }}</td>
+            <td>{{ format_long_string(i[1]) }}</td>
+            <td><a href="{{ url_for('xml', id = i[0]) }}">generate XML report</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
+{% endblock %}

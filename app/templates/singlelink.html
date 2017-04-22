@@ -1,0 +1,21 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Reports</title>
+        {% endif %}
+    </head>
+    <body>
+        <table class="table table-hover">
+        <tr>
+            <td width="80%" bgcolor="blue"><a href="{{ link }}">Click to open</a></td>
+        </tr>
+        </table>
+    </body>
+</html>
+{% endblock %}
