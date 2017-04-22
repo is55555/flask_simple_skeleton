@@ -4,8 +4,12 @@ Conda environment to recreate the system: package-list.txt
 use: # $ conda create --name <env> --file package-list.txt
 
 I intended to create a separate environment for production and debugging with different 
-levels of logging, etc. The skeletop for it should be functional but I didn't have the time 
-to refine it. I used ./RunDebug.sh during development.
+levels of logging, etc. The skeleton for it should be functional.
+
+This app does a very basic task (generating XML reports from json) which simply reads from
+a directory and outputs to another directory. I found I kept needing to do similar stuff
+for little throw-away local flask apps (for doing things like annotating and displaying
+data), so I figured I would put this online to have it handy.
 
 Note than in app/tests there's just the output of reportGenXML.py 
 (when run standalone __name__ == "__main__"). These tests are not as exhaustive as I'd 
@@ -23,3 +27,6 @@ basic and based off a version of bootstrap I had around, to save time.
 
 XML generation which is very generic and allows for almost anything you throw at it.
 
+# Licence
+
+MIT
